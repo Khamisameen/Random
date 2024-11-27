@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Word Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #generate-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #random-words {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Word Generator</h1>
+    <button id="generate-btn">Generate 12 Random Words</button>
+    <div id="random-words"></div>
+    <script>
+        const generateBtn = document.getElementById('generate-btn');
+        const randomWordsDiv = document.getElementById('random-words');
+        const wordList = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'ice cream', 'jackfruit', 'kiwi', 'lemon', 'mango', 'nectarine', 'orange', 'papaya', 'quince', 'raspberry', 'strawberry', 'tangerine', 'ugli fruit', 'victoria plum', 'watermelon', 'xigua', 'yellow passionfruit', 'zucchini'];
+        generateBtn.addEventListener('click', () => {
+            const randomWords = [];
+            for (let i = 0; i < 12; i++) {
+                const randomIndex = Math.floor(Math.random() * wordList.length);
+                randomWords.push(wordList[randomIndex]);
+            }
+            randomWordsDiv.innerText = randomWords.join(' ');
+        });
+    </script>
+</body>
+</html>
